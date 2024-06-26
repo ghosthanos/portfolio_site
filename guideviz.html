@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/guideviz.css">
+    <title>Guideviz</title>
+    <link rel="icon" type="image/png" href="/icons/guideviz.png">
+    <style>
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(0px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(-110px);
+                opacity: 1;
+            }
+        }
+        .card1 {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .fade-in-up {
+            animation: fadeInUp 1s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <div class="left-visit-repo">visit repo</div>
+        <img class="my" src="/icons/guideviz.png" alt="">
+        <div class="left-visit-repo">visit repo</div>
+        <div style="cursor:pointer" class="visit-repo" onclick="handleButtonClick()">visit repo</div>
+        <div class="left-visit-repo">visit repo</div>
+    </div>
+    
+    <div class="main-heading-and-image">
+        <h1 class="main-heading">Guideviz</h1>
+        <h6 class="sub-heading">A guidance system for the visually impaired</h6>
+        <img class="guideviz-app-photo" src="/images/guideviz/guideviz app photo copy.png" alt="">
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="card1">
+        <h3 class="vignesh">
+            <span style="background: linear-gradient(to right,#009CC7, #43ECE3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                Accessible Design
+            </span> 
+            with Contrasting Colors.
+        </h3>
+        <h3 class="vignesh">
+            Single Tap for 
+            <span style="background: linear-gradient(to right,#009CC7, #43ECE3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                Instant Guidance
+            </span>, 
+            Double-Tap to Explore.
+        </h3>
+        <h3 class="vignesh">
+            <span style="background: linear-gradient(to right,#009CC7, #43ECE3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                Seamless navigation
+            </span> 
+            at your fingertips with our intuitive map traversal.
+        </h3>
+    </div>
+
+   <!--DETAILS-->
+<div class="details">
+    <div class="gesture-description-and-image">
+        <div class="gesture-description">
+            <h3>Tap Once, Hear Twice.</h3>
+    
+            <p style="color: rgb(214, 214, 214); font-weight: 100;">Single tap gives a voice output describing the button and Double tap lets you navigate to the page.</p>
+        </div>
+        <img src="/images/guideviz/homepage.png" alt="">
+    </div>
+    </div>
+
+<div class="details">
+<div class="gesture-description-and-image">
+    <div class="gesture-description">
+        <h3>Swift Navigation,<br>
+            A Seamless Guide.</h3>
+
+        <p>Single tap gives a voice output describing the button and Double tap lets you navigate to the page.</p>
+    </div>
+    <img src="/images/guideviz/maps.png" alt="">
+</div>
+</div>
+
+
+<div class="details">
+    <div class="gesture-description-and-image">
+        <div class="gesture-description">
+            <h3>Scan Around,<br>
+                Recognize Instantly.</h3>
+    
+            <p>Object detection with TensorFlow model, providing clear voice output upon recognition for a simple and efficient user experience.</p>
+        </div>
+        <img src="/images/guideviz/object_detection.png" alt="">
+    </div>
+    </div>
+
+
+    <div class="powered-by-flutter">
+        <h1>Powered by 
+            <span style="background: linear-gradient(to right,#01baee, #0f5c9e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                Flutter
+            </span>
+        </h1>
+        <p>Powered by flutter, our app offers a seamless experience for the visually impaired. With its intuitive interface and efficient functionalities, it redefines accessibility, making navigation simpler and more intuitive.</p>
+    </div>
+
+    <script>
+        function handleButtonClick() {
+            window.open('https://github.com/ghosthanos/guide-viz', '_blank');
+        }
+
+
+
+
+
+
+
+
+        
+        
+        document.addEventListener('DOMContentLoaded', function () {
+    let previousScrollY = window.scrollY;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const card = entry.target;
+            const children = card.querySelectorAll('h3');
+
+            if (entry.isIntersecting) {
+                if (entry.boundingClientRect.top < entry.rootBounds.bottom) {
+                    card.classList.add('staggered');
+                    children.forEach((child, index) => {
+                        setTimeout(() => {
+                            child.classList.remove('fade-out-down');
+                            child.classList.add('fade-in-up');
+                        }, index * 200); // Delay for staggering effect
+                    });
+                }
+            } else {
+                if (entry.boundingClientRect.bottom > entry.rootBounds.top) {
+                    card.classList.remove('staggered');
+                    children.forEach((child, index) => {
+                        setTimeout(() => {
+                            child.classList.remove('fade-in-up');
+                            child.classList.add('fade-out-down');
+                        }, index * 200); // Delay for staggering effect
+                    });
+                }
+            }
+        });
+    }, { 
+        threshold: 0.1, 
+        rootMargin: '0px 0px -30% 0px' 
+    });
+
+    document.querySelectorAll('.card1').forEach(card => {
+        observer.observe(card);
+    });
+});
+
+
+        </script>
+        
+</body>
+</html>

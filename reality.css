@@ -1,0 +1,446 @@
+@keyframes fadeIn {
+    0% {
+        content-visibility: hidden;
+        font-size: 100px;
+        transform: translateY(200%);
+        opacity: 0;
+    }
+    100% {
+        font-size: 60px;
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn{
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 0.5;
+  }
+}
+
+
+
+
+/*NORMAL CSS CODE*/
+
+html{
+  font-size: 16px;
+}
+
+.my{
+  width: 60px;
+}
+
+
+.menu{
+  display:none;
+}
+
+.navbar{
+  width: 90%;
+  text-align: center;
+      margin: 0 auto;
+}
+
+.left-visit-repo{
+  color: transparent;
+}
+
+
+.top-nav {
+  position: sticky;
+  top: 0;
+  height: 70px;
+  width: 100%;
+  background-color: #14131a98;
+  border-bottom: 1px solid;
+  border-image: linear-gradient(to right, #FF4A4A,#BE3F41,#7E3238); /* Adjust colors as needed */
+  border-image-slice: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 3;
+  backdrop-filter: blur(10px);
+}
+
+
+
+.visit-repo{
+  min-width: fit-content;
+  padding-left: 0px;
+  padding-right: 0px;
+  width:7%;
+  height: 35%;
+  background: linear-gradient(to right, #FF4A4A,#BE3F41,#7E3238);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  nav-left: auto;
+  margin-right: 10px;
+}
+
+
+.sub-heading{
+  margin-top: 0px;
+  font-size: 25px;
+  font-style: italic;
+  animation: slideIn 5s ease-in-out ;
+  opacity: 0.5;
+    text-align: center;
+    background: linear-gradient(to right,#FF4A4A,#BE3F41,#7E3238);
+ /* Gradient colors */
+    -webkit-background-clip: text; /* Apply gradient as text fill */
+    -webkit-text-fill-color: transparent; /* Hide actual text color */
+    background-clip: text;
+  
+    font-family: 'Montserrat', sans-serif;
+    
+    
+}
+
+.main-heading,.guideviz-app-photo {
+  margin-bottom: 0px;
+  animation: fadeIn 1s ease-in-out ;
+  margin-bottom: 200px;
+  width: 60%;
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: #14131A;
+    background-repeat: repeat;
+    background-repeat: repeat-y;
+  
+  }
+
+.main-heading{
+    padding-top: 80px;
+    margin-top: 5px;
+    margin-bottom: 100px;
+    text-align: center;
+    background: linear-gradient(to right,#FF4A4A,#BE3F41,#7E3238); /* Gradient colors */
+    -webkit-background-clip: text; /* Apply gradient as text fill */
+    -webkit-text-fill-color: transparent; /* Hide actual text color */
+    background-clip: text;
+    font-size: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bolder;
+    margin-bottom: 0px;
+    padding-bottom: 40px;
+  }
+
+  .main-heading-and-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+/*MAIN HEADING AFTER THE IMAGES*/
+/*CARD1*/
+
+  .vignesh{
+      text-align: center;
+      position: relative;
+      top: -15px;
+      font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 2.7rem;
+  color: rgb(255, 255, 255);
+   padding: 20px;
+   text-align: center;
+   margin-bottom: 10px;
+  }
+
+  .card1{
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 200px;
+  }
+
+ /*GESTURES DETAILS*/
+
+ 
+ .vignesh span {
+  background: linear-gradient(to right, #FF4A4A,#BE3F41,#7E3238);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block; /* Ensure the span takes the width of its content */
+}
+
+
+/*DETAILS*/
+.details{
+  background-color: #1C1B23;
+  width: 65%;
+  margin: auto;
+  margin-bottom: 100px;
+  border-radius: 18px;
+}
+
+.gesture-description-and-image{
+    display: flex;
+    flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  }
+  
+  .gesture-description-and-image img{
+    width: 70%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+
+  .lime-images{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  }
+  .lime-images img{
+    width: 30%;
+    
+  }
+  
+  .gesture-description{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin:auto;
+  }
+
+.gesture-description h3{
+  color: white; 
+  font-size: 24px;
+}
+
+.gesture-description p{
+  color: rgb(150, 150, 150); 
+  font-weight: 100;
+}
+
+/*POWERED BY FLUTTER*/
+.powered-by-flutter{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.powered-by-flutter h1{
+  margin-top: 130px;
+  color: white;
+  font-size: 35px;
+}
+
+.powered-by-flutter p{
+  color: rgb(150, 150, 150); 
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 300px;
+  text-align: center;
+}
+
+
+
+
+
+/*MOBILE VIEWS*/
+@media screen and (max-width: 908px) {
+  @keyframes fadeIn {
+    0% {
+        content-visibility: hidden;
+        font-size: 10rem;
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        font-size: 2rem;
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn{
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
+
+.visit-repo{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+  .main-heading {
+      font-size: 2rem;
+  }
+
+  .sub-heading {
+      width: 99%;
+      font-size: 25 / 16rem;
+      animation: slideIn 3s ease-in-out ;
+  }
+
+  .guideviz-app-photo {
+      width: 90%;
+  }
+
+  .card1 {
+      width: 85%;
+  }
+
+  .card1 h3 {
+      font-size: 24px;
+  }
+
+
+
+/* DETAILS */
+.details{
+  background-color: #1C1B23;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 100px;
+  border-radius: 15px;
+}
+
+.gesture-description-and-image{
+  display: flex;
+  flex-direction: column;
+justify-content: center;
+text-align: center;
+align-items: center;
+}
+
+.gesture-description-and-image img{
+  width: 70%;
+}
+
+.lime-images img{
+    width: 40%;
+}
+
+.gesture-description{
+display: flex;
+flex-direction: column;
+align-items: center;
+margin:auto;
+}
+
+.gesture-description h3{
+  color: white; 
+  font-size: 24px;
+}
+
+.gesture-description p{
+  color: rgb(150, 150, 150); 
+  font-weight: 100;
+}
+
+/*POWERED BY FLUTTER*/
+.powered-by-flutter{
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.powered-by-flutter h1{
+  margin-top: 130px;
+  color: white;
+  font-size: 34px;
+}
+
+.powered-by-flutter p{
+  color: rgb(150, 150, 150); 
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 150px;
+  text-align: center;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes fadeInUp {
+  0% {
+      transform: translateY(100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.card1 {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  margin-top: 15em;
+}
+
+.card1.staggered {
+  opacity: 1; /* Ensures the parent container becomes visible */
+}
+
+.card1 h3 {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.card1 h3.fade-in-up {
+  animation: fadeInUp 1s ease forwards;
+}
+
+.card1 h3:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.card1 h3:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.card1 h3:nth-child(3) {
+  animation-delay: 0.5s;
+}

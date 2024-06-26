@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/livestock.css">
+        <title>Livestock</title>
+        <link rel="icon" type="image/png" href="/images/livestock/livestock copy.png">
+
+    </head>
+    <body>
+
+
+        <div class="top-nav">
+            <div class="left-visit-repo">visit repo</div>
+            <img class="my" src="/images/livestock/livestock copy.png" alt="">
+            <div class="left-visit-repo">visit repo</div>
+            <div style="cursor: pointer;" class="visit-repo" onclick="handleButtonClick()">visit repo</div>
+            <div class="left-visit-repo">visit repo</div>
+        </div>
+        
+        <div class="main-heading-and-image">
+    <h1 class="main-heading">Livestock</h1>
+ <h6 class="sub-heading">A one stop app to track all your cattle</h6> 
+    <img class="guideviz-app-photo" src="/images/livestock/new_new_livestock_app_photo.png" alt="">
+</div>
+
+<!--SUMMARY-->
+<div class="card1">
+    
+    <h3 class="vignesh"> <span style=" background: linear-gradient(to right,#4D7722, #9DD068); /* Gradient colors */
+        -webkit-background-clip: text; /* Apply gradient as text fill */
+        -webkit-text-fill-color: transparent; /* Hide actual text color */
+        background-clip: text;">Capture every footprint,</span><br>Track and store your livestock's journey.</h3>
+
+    <h3 class="vignesh"> <span style=" background: linear-gradient(to right,#4D7722, #9DD068); /* Gradient colors */
+        -webkit-background-clip: text; /* Apply gradient as text fill */
+        -webkit-text-fill-color: transparent; /* Hide actual text color */
+        background-clip: text;">Sophisticated simplicity,</span> A clean UI for effortless management.</h3>
+
+    <h3 class="vignesh">Stay in sync with <span style=" background: linear-gradient(to right,#4D7722, #9DD068); /* Gradient colors */
+        -webkit-background-clip: text; /* Apply gradient as text fill */
+        -webkit-text-fill-color: transparent; /* Hide actual text color */
+        background-clip: text;"> timely notifications,</span> ensuring you're always informed.</h3>
+    
+
+    
+</div>
+
+
+
+
+<!--DETAILS-->
+<div class="details">
+    <div class="gesture-description-and-image">
+        <div class="gesture-description">
+            <h3>Making tracking convinient.</h3>
+    
+            <p style="color: rgb(214, 214, 214); font-weight: 100;">
+                Working with Kerala's government for a livestock tracking app. One-stop herd management: all your livestock with you, hassle-free!</p>
+        </div>
+        <img style="margin-right: 30px; margin-left: 30px;" src="/images/livestock/new_new_homepage.png" alt="">
+    </div>
+    </div>
+
+<div class="details">
+<div class="gesture-description-and-image">
+    <div class="gesture-description">
+        <h3>View your cattles,<br>all at a single glance.</h3>
+
+        <p>With our app, a quick look reveals your cattle's current stages, IDs, and ages – all in one snapshot. Simplifying livestock management for a seamless overview! <br><br>Swipe left for editing the details or deleting a cattle and the Search icon at the tops let your search your cattle at ease</p>
+    </div>
+    <img src="/images/livestock/new_new_all_cows.png" alt="">
+</div>
+</div>
+
+
+<div class="details">
+    <div class="gesture-description-and-image">
+        <div class="gesture-description">
+            <h3>Every Moo-ment🐮 matters!</h3>
+    
+            <p>Your cow's story at a click, revealing a narrative of details – from physical description to de-worming, pregnancy, insemination, and beyond! This page is the canvas where every chapter of your cow's journey unfolds, providing a comprehensive insight at your convenience.</p>
+        </div>
+        <img src="/images/livestock/new_details.png" alt="">
+    </div>
+    </div>
+
+
+
+<div class="powered-by-flutter">
+    <h1>Powered by <span style=" background: linear-gradient(to right,#01baee, #0f5c9e);
+        /* Gradient colors */
+           -webkit-background-clip: text; /* Apply gradient as text fill */
+           -webkit-text-fill-color: transparent; /* Hide actual text color */
+           background-clip: text;"> <a href=""></a>Flutter</span></h1>
+    <p>
+        Powered by Flutter, our app simplifies livestock tracking. Easily monitor your animals, from health details to growth stages, with user-friendly features that put comprehensive control in the palm of your hand.</p>
+</div>
+<h4 class="under-developement"><span style=" background: linear-gradient(to right,#4D7722, #9DD068); /* Gradient colors */
+    -webkit-background-clip: text; /* Apply gradient as text fill */
+    -webkit-text-fill-color: transparent; /* Hide actual text color */
+    background-clip: text;">*The app is currently under developement, visit the repository for more info.</span></h4>
+    
+
+
+    <script>
+        function handleButtonClick() {
+            window.open('https://github.com/ghosthanos/Livestock', '_blank');
+        }
+        
+        // Intersection Observer for fade-in effect
+        document.addEventListener('DOMContentLoaded', function () {
+    let previousScrollY = window.scrollY;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const card = entry.target;
+            const children = card.querySelectorAll('h3');
+
+            if (entry.isIntersecting) {
+                if (entry.boundingClientRect.top < entry.rootBounds.bottom) {
+                    card.classList.add('staggered');
+                    children.forEach((child, index) => {
+                        setTimeout(() => {
+                            child.classList.remove('fade-out-down');
+                            child.classList.add('fade-in-up');
+                        }, index * 200); // Delay for staggering effect
+                    });
+                }
+            } else {
+                if (entry.boundingClientRect.bottom > entry.rootBounds.top) {
+                    card.classList.remove('staggered');
+                    children.forEach((child, index) => {
+                        setTimeout(() => {
+                            child.classList.remove('fade-in-up');
+                            child.classList.add('fade-out-down');
+                        }, index * 200); // Delay for staggering effect
+                    });
+                }
+            }
+        });
+    }, { 
+        threshold: 0.1, 
+        rootMargin: '0px 0px -30% 0px' 
+    });
+
+    document.querySelectorAll('.card1').forEach(card => {
+        observer.observe(card);
+    });
+});
+        </script>
+        
+
+
+
+</body>
+</html>

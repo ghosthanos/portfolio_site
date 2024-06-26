@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/reality.css">
+        <title>R.E.A.L.I.T.Y</title>
+        <link rel="icon" type="image/png" href="/icons/reality.png">
+
+    </head>
+    <body>
+
+
+        <div class="top-nav">
+            <div class="left-visit-repo">visit repo</div>
+            <img class="my" src="/icons/reality.png" alt="">
+            <div class="left-visit-repo">visit repo</div>
+            <div style="cursor:pointer" class="visit-repo" onclick="handleButtonClick()" >visit repo</div>
+            <div class="left-visit-repo">visit repo</div>
+        </div>
+        
+        <div class="main-heading-and-image">
+    <h1 class="main-heading">R.E.A.L.I.T.Y</h1>
+ <h6 class="sub-heading">ROBERTA and LIME Assisted Interpretation for Truthfulness and Yield</h6> 
+    <img class="guideviz-app-photo" src="/images/reality/Screenshot 2024-04-24 at 10.13.18 PM.png" alt="">
+</div>
+
+<!--SUMMARY-->
+<div class="card1">
+    
+    <h3 class="vignesh">Experience the power of <span style=" background: linear-gradient(to right,#FF4A4A,#BE3F41,#7E3238); /* Gradient colors */
+        -webkit-background-clip: text; /* Apply gradient as text fill */
+        -webkit-text-fill-color: transparent; /* Hide actual text color */
+        background-clip: text;"> ROBERTA and LIME, Advancing Fake News Detection and Explainability.</span></h3>
+
+    <h3 class="vignesh">Trained with <span style=" background: linear-gradient(to right,#FF4A4A,#BE3F41,#7E3238); /* Gradient colors */
+        -webkit-background-clip: text; /* Apply gradient as text fill */
+        -webkit-text-fill-color: transparent; /* Hide actual text color */
+        background-clip: text;">Over 146,000+ News Articles,</span> for Enhanced Fake News Detection.</h3>
+    
+
+    <h3 class="vignesh">With an <span style=" background: linear-gradient(to right,#FF4A4A,#BE3F41,#7E3238); /* Gradient colors */
+        -webkit-background-clip: text; /* Apply gradient as text fill */
+        -webkit-text-fill-color: transparent; /* Hide actual text color */
+        background-clip: text;">Accuracy of 94%,</span> Go Beyond True or False, Understand the Pathways with <span>LIME.</span></h3>
+    
+</div>
+
+
+
+
+<!--DETAILS-->
+<div class="details">
+    <div class="gesture-description-and-image">
+        <div class="gesture-description">
+            <h3> <span style="background: linear-gradient(to right, #00FF00, #00FF00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">REAL</span> 
+                or 
+                <span style="color: #FF0000;">FAKE</span</h3>
+    
+            <p>User inputs a news(currently from our dataset itself) and RoBERTA analyse and returns if the given news was real or fake.</p>
+        </div>
+        <img src="/images/reality/roberta_output.png" alt="">
+    </div>
+    </div>
+
+<div class="details">
+<div class="gesture-description-and-image">
+    <div class="gesture-description">
+        <h3>But How?</h3>
+
+        <p>With the help of LIME(Local Interpretable Model-Agnostic Explanations), we get the number of keywords that were used(along with their weights) in the decision process.</p>
+    </div>
+    <div class="lime-images"> <img src="/images/reality/LIME_output_1.png" alt="">
+        <img src="/images/reality/LIME_output_2.png" alt=""></div>
+   
+</div>
+</div>
+
+
+<div class="details">
+    <div class="gesture-description-and-image">
+        <div class="gesture-description">
+            <h3>What influenced the decision?</h3>
+    
+            <p>A Graph is generated that displays the words and their weightage.</p>
+        </div>
+        <img src="/images/reality/LIME_graph.jpeg " alt="">
+    </div>
+    </div>
+
+
+
+<div class="powered-by-flutter">
+    <h1>Powered by <span style=" background: linear-gradient(to right,#FF4A4A,#BE3F41,#7E3238);
+        /* Gradient colors */
+           -webkit-background-clip: text; /* Apply gradient as text fill */
+           -webkit-text-fill-color: transparent; /* Hide actual text color */
+           background-clip: text;"> <a href=""></a>Streamlit</span></h1>
+    <p>Powered by Streamlit, our website offers a seamless web integration.</p>
+</div>
+
+<script>
+    function handleButtonClick() {
+        window.open('https://github.com/ghosthanos/Livestock', '_blank');
+    }
+    
+    // Intersection Observer for fade-in effect
+    document.addEventListener('DOMContentLoaded', function () {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const card = entry.target;
+                    card.classList.add('staggered');
+                    const children = card.querySelectorAll('h3');
+                    children.forEach((child, index) => {
+                        setTimeout(() => {
+                            child.classList.add('fade-in-up');
+                        }, index * 200); // Delay for staggering effect
+                    });
+                    observer.unobserve(card);
+                }
+            });
+        }, { threshold: 0.5 });
+    
+        document.querySelectorAll('.card1').forEach(card => {
+            observer.observe(card);
+        });
+    });
+    </script>
+
+
+    </body>
+</html>

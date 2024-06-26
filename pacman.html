@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/pacman.css">
+        <title>Pacman</title>
+        <link rel="icon" type="image/png" href="icons/pacman.png">
+</head>
+
+
+<body>
+
+
+
+
+        <div class="top-nav">
+            
+            <div class="left-visit-repo">visit repo</div>
+            <img class="my" src="/icons/pacman.png" alt="">
+            <div class="left-visit-repo">visit repo</div>
+            <div style="cursor: pointer;" class="visit-repo" onclick="handleButtonClick()" >visit repo</div>
+            <div class="left-visit-repo">visit repo</div>
+        </div>
+
+
+
+        
+        <div class="main-heading-and-image">
+    <h1 class="main-heading">Pacman</h1>
+ <h6 class="sub-heading">The classic game we all love, now with a twist!</h6> 
+    <img class="guideviz-app-photo" src="/images/pacman/pacman-app-photo copy.png" alt="">
+</div>
+
+<!--SUMMARY-->
+<div class="card1">
+    
+    <h3 class="vignesh"> <span style=" background: linear-gradient(to right,#D79B00, #FFDA1B); /* Gradient colors */
+        -webkit-background-clip: text; /* Apply gradient as text fill */
+        -webkit-text-fill-color: transparent; /* Hide actual text color */
+        background-clip: text;">Nostalgia revisited,</span><br>now at your fingertips.</h3>
+
+    <h3 class="vignesh">Gameplay simplicity meets 
+        modern <span style=" background: linear-gradient(to right,#D79B00, #FFDA1B); /* Gradient colors */
+        -webkit-background-clip: text; /* Apply gradient as text fill */
+        -webkit-text-fill-color: transparent; /* Hide actual text color */
+        background-clip: text;">excitement.</span></h3>
+    
+
+    <h3 class="vignesh">Swipe, <span style=" background: linear-gradient(to right,#D79B00, #FFDA1B); /* Gradient colors */
+        -webkit-background-clip: text; /* Apply gradient as text fill */
+        -webkit-text-fill-color: transparent; /* Hide actual text color */
+        background-clip: text;">dodge,</span> and munch!</h3>
+    
+</div>
+
+
+
+
+<!--DETAILS-->
+<div class="details">
+    <div class="gesture-description-and-image">
+        <div class="gesture-description">
+            <h3>Nostalgia revisited.</h3>
+    
+            <p style="color: rgb(214, 214, 214); font-weight: 100;">Revive the thrill of Pac-Man, now in the palm of your hand!</p>
+        </div>
+        <img src="/images/pacman/main-menu.png" alt="">
+    </div>
+    </div>
+
+<div class="details">
+<div class="gesture-description-and-image">
+    <div class="gesture-description">
+        <h3>Swipe, dodge, and munch!</h3>
+
+        <p>Navigate the mazes with swift gestures, effortlessly traversing and strategically escaping the cunning ghosts in an interactive Pac-Man experience.</p>
+    </div>
+    <img src="/images/pacman/gameplay.png" alt="">
+</div>
+</div>
+
+
+
+
+<div class="powered-by-flutter">
+    <h1>Powered by <span style=" background: linear-gradient(to right,#01baee,#009CC7, #0f5c9e);
+        /* Gradient colors */
+           -webkit-background-clip: text; /* Apply gradient as text fill */
+           -webkit-text-fill-color: transparent; /* Hide actual text color */
+           background-clip: text;"> <a href=""></a>Flutter</span></h1>
+    <p>This app, crafted entirely with Flutter, brings Pac-Man to life, demonstrating the smooth blend of design and functionality in a user-friendly package.</p>
+</div>
+
+<h4 class="under-developement"><span style=" background: linear-gradient(to right,#D79B00, #FFDA1B); /* Gradient colors */
+    -webkit-background-clip: text; /* Apply gradient as text fill */
+    -webkit-text-fill-color: transparent; /* Hide actual text color */
+    background-clip: text;">*The app is currently under developement, visit the repository for more info.</span></h4>
+    
+    <script>
+        function handleButtonClick() {
+            window.open('https://github.com/ghosthanos/pacman-flutter', '_blank');
+        }
+        
+        // Intersection Observer for fade-in effect
+        document.addEventListener('DOMContentLoaded', function () {
+    let previousScrollY = window.scrollY;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const card = entry.target;
+            const children = card.querySelectorAll('h3');
+
+            if (entry.isIntersecting) {
+                if (entry.boundingClientRect.top < entry.rootBounds.bottom) {
+                    card.classList.add('staggered');
+                    children.forEach((child, index) => {
+                        setTimeout(() => {
+                            child.classList.remove('fade-out-down');
+                            child.classList.add('fade-in-up');
+                        }, index * 200); // Delay for staggering effect
+                    });
+                }
+            } else {
+                if (entry.boundingClientRect.bottom > entry.rootBounds.top) {
+                    card.classList.remove('staggered');
+                    children.forEach((child, index) => {
+                        setTimeout(() => {
+                            child.classList.remove('fade-in-up');
+                            child.classList.add('fade-out-down');
+                        }, index * 200); // Delay for staggering effect
+                    });
+                }
+            }
+        });
+    }, { 
+        threshold: 0.1, 
+        rootMargin: '0px 0px -30% 0px' 
+    });
+
+    document.querySelectorAll('.card1').forEach(card => {
+        observer.observe(card);
+    });
+});
+        </script>
+
+
+</body>
+</html>
